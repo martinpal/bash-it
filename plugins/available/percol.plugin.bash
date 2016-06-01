@@ -35,7 +35,7 @@ if command -v percol>/dev/null; then
 
         # bind zz to percol if fasd enable
         if command -v fasd>/dev/null; then
-            zz(){
+            function zz {
                 local l=$(fasd -d | awk '{print $2}' | percol)
                 cd $l
             }
