@@ -178,7 +178,7 @@ function __powerline_left_segment {
   if [[ "${SEGMENTS_AT_LEFT}" -gt 0 ]]; then
     separator="$(set_rgb_color ${LAST_SEGMENT_COLOR} ${params[1]})${separator_char}${normal}${normal}"
   fi
-  LEFT_PROMPT+="${separator}$(set_rgb_color - ${params[1]}) ${params[0]} ${normal}"
+  LEFT_PROMPT+="${separator}$(set_rgb_color 15 ${params[1]}) ${params[0]} ${normal}"
   LAST_SEGMENT_COLOR=${params[1]}
   (( SEGMENTS_AT_LEFT += 1 ))
 }
@@ -197,7 +197,7 @@ function __powerline_right_segment {
     separator_color="$(set_rgb_color ${params[1]} ${LAST_SEGMENT_COLOR})"
     (( padding += 1 ))
   fi
-  RIGHT_PROMPT+="${separator_color}${separator_char}${normal}$(set_rgb_color - ${params[1]}) ${params[0]} ${normal}$(set_rgb_color - ${COLOR})${normal}"
+  RIGHT_PROMPT+="${separator_color}${separator_char}${normal}$(set_rgb_color 15 ${params[1]}) ${params[0]} ${normal}$(set_rgb_color - ${COLOR})${normal}"
   RIGHT_PROMPT_LENGTH=$(( ${#params[0]} + RIGHT_PROMPT_LENGTH + padding ))
   LAST_SEGMENT_COLOR="${params[1]}"
   (( SEGMENTS_AT_RIGHT += 1 ))
