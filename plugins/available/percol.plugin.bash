@@ -26,7 +26,7 @@ _replace_by_history() {
 }
 
 
-if command -v percol>/dev/null; then
+if [ -n "$PS1" ] && command -v percol>/dev/null; then
     local current_version=${BASH_VERSION%%[^0-9]*}
     if [ $current_version -lt 4 ]; then
        echo "Warning:You have to upgrade bash to bash 4.x to use percol plugin."
