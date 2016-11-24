@@ -25,7 +25,7 @@ function __powerline_right_segment {
       fi
     (( padding += 1 ))
   fi
-  RIGHT_PROMPT+="${separator_color}${separator_char}${normal}$(set_color - ${params[1]}) ${params[0]} ${normal}$(set_color - ${COLOR})${normal}"
+  RIGHT_PROMPT+="${separator_color}${separator_char}${normal}$(set_color 15 ${params[1]}) ${params[0]} ${normal}$(set_color - ${COLOR})${normal}"
   RIGHT_PROMPT_LENGTH=$(( ${#params[0]} + RIGHT_PROMPT_LENGTH + padding ))
   LAST_SEGMENT_COLOR="${params[1]}"
   (( SEGMENTS_AT_RIGHT += 1 ))
