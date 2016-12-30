@@ -17,7 +17,7 @@ if $(command -v pygmentize &> /dev/null) ; then
       example 'cat mysite/manage.py dir/text-file.txt'
       for var;
       do
-          pygmentize -f 256 -O style="$BASH_IT_CCAT_STYLE" -g "$var" 2>/dev/null || "$CAT_BIN" "$var";
+          pygmentize -f 16m -O style="$BASH_IT_CCAT_STYLE" -g "$var" 2>/dev/null || "$CAT_BIN" "$var";
       done
   }
 
@@ -26,6 +26,6 @@ if $(command -v pygmentize &> /dev/null) ; then
       about 'it pigments the file passed in and passes it to less for pagination'
       param '$1: the file to paginate with less'
       example 'less mysite/manage.py'
-      pygmentize -f 256 -O style="$BASH_IT_CLESS_STYLE" -g $* | "$LESS_BIN" -R
+      pygmentize -f 16m -O style="$BASH_IT_CLESS_STYLE" -g $* | "$LESS_BIN" -R
   }
 fi
